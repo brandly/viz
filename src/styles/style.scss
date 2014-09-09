@@ -1,0 +1,22 @@
+#viz {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  padding: 5px;
+  margin: 50px auto;
+
+  audio {
+    width: 100%;
+    background: #000;
+    float:left;
+  }
+
+  canvas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: #002D3C;
+  }
+}
