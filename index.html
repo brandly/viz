@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind="pageTitle">viz</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="the.css">
+    <link rel="shortcut icon" href="./favicon.ico">
+  </head>
+  <body>
+    <div id="viz">
+      <audio preload="auto" src="04 - Guns &amp; Roses.mp3" controls autoplay></audio>
+      <canvas></canvas>
+    </div>
+    <script src="viz.js"></script>
+    <script>
+      new Viz('viz', {
+        frequency: function (frequencyData, context, canvas) {
+          context.fillStyle = '#00CCFF';
+          var x, width, height;
+          for (var i = 0; i < frequencyData.length; i++) {
+            x = i;
+            width = 1;
+            height = -(frequencyData[i] / 2);
+            context.fillRect(x, canvas.height, width, height);
+          }
+        },
+        time: function (timeData, context, canvas) {
+          context.fillStyle = 'white';
+          length = timeData.length;
+          var percent, height, offset, width;
+          for (var i = 0; i < length; i++) {
+            percent = timeData[i] / 265;
+            height = canvas.height * percent;
+            offset = canvas.height - height - 1;
+            width = canvas.width / length;
+            context.fillRect(i * width, offset, 1, 1);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
