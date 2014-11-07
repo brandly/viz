@@ -1,6 +1,7 @@
 
 w = window
 requestFrame = w.requestAnimationFrame or w.mozRequestAnimationFrame or w.webkitRequestAnimationFrame or w.oRequestAnimationFrame
+AudioContext = window.AudioContext or window.webkitAudioContext
 noop = ->
 
 class Repeater
@@ -40,7 +41,7 @@ class Viz
       throw "No <canvas> element found inside ##{id}"
 
     @canvasContext = @canvas.getContext '2d'
-    audioContext = new webkitAudioContext
+    audioContext = new AudioContext
     @analyser = audioContext.createAnalyser()
 
     # Wire the audio into the analyser
