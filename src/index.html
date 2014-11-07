@@ -27,7 +27,7 @@
       <p>Made by <a href="https://github.com/brandly">Matthew Brandly</a>.</p>
     </div>
     <div id="viz">
-      <audio preload="auto" src="http://p1.bcbits.com/download/track/d4ceb1da4675cea6f4a267c4205d730b/mp3-128/2619638301?fsig=678f3b4946624d360e634adf46fa35f8&id=2619638301&stream=1&ts=1415361600.0&e=1415361660&rs=32&ri=960&h=899bf8e668ce857420fbebbbf736eef3" autoplay></audio>
+      <audio preload="auto" src="origami-space-ship.mp3" autoplay></audio>
       <canvas></canvas>
     </div>
     <script src="viz.js"></script>
@@ -35,7 +35,6 @@
       new Viz('viz', {
         frequency: function (frequencyData, context, canvas) {
           context.fillStyle = '#399A96';
-          // context.fillStyle = 'rgb(163, 125, 255)';
           var x, width, height;
           for (var i = 0; i < frequencyData.length; i++) {
             x = i;
