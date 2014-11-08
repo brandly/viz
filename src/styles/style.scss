@@ -36,8 +36,7 @@ $viz-height: 200px;
     left: 0;
     width: 100%;
     height: $viz-height;
-    background-color: $background-color;
-    box-shadow: 0px -5px 5px $background-color;
+    background-color: transparent;
   }
 }
 
