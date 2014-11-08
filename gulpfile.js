@@ -18,7 +18,7 @@ if (!gutil.env.gh) {
 }
 
 gulp.task('coffee', function () {
-    return gulp.src('src/scripts/**/*.coffee')
+    return gulp.src('src/viz.coffee')
         .pipe(coffee())
         .on('error', gutil.log)
         .pipe(uglify())
@@ -27,7 +27,7 @@ gulp.task('coffee', function () {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('src/styles/style.scss')
+    return gulp.src('demo/styles/style.scss')
         .pipe(sass())
         .on('error', gutil.log)
         .pipe(minify())
@@ -36,17 +36,17 @@ gulp.task('sass', function () {
 });
 
 gulp.task('favicons', function () {
-    return gulp.src('src/styles/favicons/*')
+    return gulp.src('demo/styles/favicons/*')
         .pipe(gulp.dest(build));
 });
 
 gulp.task('sounds', function () {
-    return gulp.src('src/sounds/*')
+    return gulp.src('demo/sounds/*')
         .pipe(gulp.dest(build));
 });
 
 gulp.task('index', function () {
-    return gulp.src('src/index.html')
+    return gulp.src('demo/index.html')
         .pipe(gulp.dest(build));
 });
 
